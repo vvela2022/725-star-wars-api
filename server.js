@@ -19,10 +19,10 @@ app.get('/', function(req, res) {
         .then(function (response) {
             console.log(`I love Github!`)
             let context = {
-                starWarsData: response.data
+                starWarsData: response.data.Search
             }
             // handle success
-            console.log(context.starWarsData.Search[0].Title)
+            console.log(context.starWarsData[0].Title)
             res.render('index', context);
         })
         .catch(function (error) {
@@ -34,4 +34,4 @@ app.get('/', function(req, res) {
 app.listen(3012, function() {
     console.log(`I am listening on port 3000`)
 });
-app.listen(3000);
+// app.listen(3000);

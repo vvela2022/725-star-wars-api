@@ -3,6 +3,8 @@ const axios = require('axios');
 const app = express();
 require('dotenv').config();
 
+// We're working on a project together!!!
+
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
@@ -32,3 +34,4 @@ app.get('/', function(req, res) {
 app.listen(3012, function() {
     console.log(`I am listening on port 3000`)
 });
+app.listen(3000);

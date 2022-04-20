@@ -2,6 +2,20 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 require('dotenv').config();
+// Mongoose is a Object Data Modeling (ODM) library for 
+// MongoDB distributed as an npm package.
+const mongoose = require("mongoose");
+
+// configures and gives access to .env file object
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGODB_URI)
+    .then( () => {
+        console.log(`[${new Date().toLocaleTimeString()}] - MongoDB connected ... 🙌 🙌 🙌`);
+    })
+    .catch( (error) => {
+        console.log('MongoDB connection error 😥', error)
+})
 
 // We're working on a project together!!!
 

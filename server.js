@@ -15,6 +15,7 @@ app.get('/', function(req, res) {
 
     axios.get('http://www.omdbapi.com', queryOptions)
         .then(function (response) {
+            console.log(`I love Github!`)
             let context = {
                 starWarsData: response.data
             }
@@ -28,4 +29,6 @@ app.get('/', function(req, res) {
         })
 });
 
-app.listen(3000);
+app.listen(3012, function() {
+    console.log(`I am listening on port 3000`)
+});

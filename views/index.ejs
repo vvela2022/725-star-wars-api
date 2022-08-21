@@ -7,12 +7,8 @@
     <title>Star Wars</title>
 </head>
 <body>
-    <% for(let i = 0; i < starWarsData.length; i++){ %> 
-        <% const movie = starWarsData[i] %>
-        <h2>Movie Name: <%= movie.Title %></h2>
-        <h4>Year: <%= movie.Year %></h4>
-        <br>
-        <img src="<%= movie.Poster %>" alt="<%= movie.Title %>" />
-    <% } %>
+    <% starWarsData.forEach(function(movie){ %> 
+        <%- include('partials/result', {movie: movie}) %>
+    <% }) %>
 </body>
 </html>

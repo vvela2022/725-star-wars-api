@@ -18,11 +18,7 @@ router.get('/starwars', function(req, res) {
 
     axios.get('http://www.omdbapi.com', queryOptions)
         .then(function (response) {
-            let context = {
-                starWarsData: response.data.Search
-            }
-            // handle success
-            res.render('index', context);
+            res.send(response.data)
         })
         .catch(function (error) {
             // handle error

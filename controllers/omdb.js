@@ -9,17 +9,20 @@ require('dotenv').config();
 const API_KEY = process.env.API_KEY
 
 router.get('/starwars', function(req, res) {
-    const queryOptions = {
+     const queryOptions = {
         params: {
-            s: 'star wars',
+             s: 'star wars',
             apikey: API_KEY
         }
-    };
+     };
 
     axios.get('http://www.omdbapi.com', queryOptions)
         .then(function (response) {
             // handle success
-            res.send(response.data)
+            // res.send(response.data)
+            let context = {starWarsData: response.data.Search}
+            // console.log(context) this console log allows you to see what is in the object you queried from the database
+            res.render('index.ejs', context)
         })
         .catch(function (error) {
             // handle error
